@@ -1,5 +1,4 @@
 1. NONE OF LIABILITY ON ANY LOSS OR DAMAGE ON USING THIS CODE.
 2. These files are used for the reference purprose only and satisfy with all other authors in the Python open source community request. In short, please respect all authors efforts in Python and related modules work.
-3. thanks to many people contribution in sharing the knowledge in the numerical analysis and Prof. Shih.
-
+3. thanks to many people contribution in sharing the knowledge in the numerical analysis and Prof. Shih coaching.
 good luck.  jasper
