@@ -30,7 +30,11 @@ class NCM09:
         # output diagonal matrix M with elements as 1,2,3,4 in diagonal
         i = v.shape[0]
         M = np.matrix(np.eye(i)) * 1.
+<<<<<<< HEAD
         for index in range(0, i):
+=======
+        for index in range(0, (i - 1)):
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
             M[index, index] = v[index]
         return M
 
@@ -43,6 +47,7 @@ class NCM09:
             result = 0
             if (choice == 0):
                 result = NCM09.power_method_core(A.I)
+<<<<<<< HEAD
                 E = np.dot(A, result) / result[0]
                 E = E[0]
                 # print("smallest eigenvalue\n", result)
@@ -50,12 +55,20 @@ class NCM09:
                 result = NCM09.power_method_core(A)
                 E = np.dot(A, result) / result[0]
                 E = E[0]
+=======
+                result = result[0]
+                # print("smallest eigenvalue\n", result)
+            elif (choice == 1):
+                result = NCM09.power_method_core(A)
+                result = result[0]
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
                 # print("largest eigenvalue\n", result)
             elif (choice == 2):
                 # print("all eigenvalues")
                 result = NCM09.power_method_core(A)
                 # print("largest eigenvalue\n", result)
                 B, H = NCM09.Deflation_Householder_core(A, result)
+<<<<<<< HEAD
                 E = B
             else:
                 print("invalid choice")
@@ -65,6 +78,17 @@ class NCM09:
             E = 0
 
         return E
+=======
+                result = B
+            else:
+                print("invalid choice")
+                result = 0
+        else:
+            print("not support in n!=m")
+            result = 0
+
+        return result
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
 
     @staticmethod
     def Deflation_Householder_core(A, E):
@@ -95,16 +119,27 @@ class NCM09:
                     delta = abs(NCM07.norm(uu - u))
                     count = count + 1
                     if (count > 50):
+<<<<<<< HEAD
                         # print("**** WARNING: duplicated eigenvalue or converge too slow ****")
                         pass
                         break
                 except ValueError:
+=======
+                        print("**** WARNING: duplicated eigenvalue or converge too slow ****")
+                        pass
+                        break
+                except ValueError:  # not possible to perform the Cholesky !!
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
                     Error_Flg = True
                     print("Power Method fail")
                     break
         else:
             print("not support in n!=m")
+<<<<<<< HEAD
             u = 1e-10
+=======
+            u = 0
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
 
         return u
 
@@ -120,9 +155,13 @@ class NCM09:
         i, j = A.shape[0], A.shape[1]
         ATA = np.dot(A.T, A)
         # E = NCM09.eigen_qr(ATA)
+<<<<<<< HEAD
         EE, VV = la.eig(ATA)  # Python library
         # print("EE1 \n",EE)
         # print("VV1 \n", VV)
+=======
+        EE, VV = la.eig(ATA)
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
         idx = EE.argsort()[::-1]  # sorting the eigenvlaue
         EE = EE[idx]
         VV = VV[:, idx]
@@ -159,7 +198,11 @@ class NCM09:
             print("Smallest Eigenvalue in Power Method :\n", NCM09.power_method(A, 0).round(3))
             print("Biggest Eigenvalue in Power Method :\n", NCM09.power_method(A, 1).round(3))
             print("Alll Eigenvalues in Power Method :\n", NCM09.power_method(A, 2).round(3))
+<<<<<<< HEAD
             print("QR eigen :\n", NCM09.eigen_qr(A).round(3))
+=======
+            print("QR eigen :\n", NCM09.eigen_qr(A))
+>>>>>>> ed51f56b7911632cddecafc131a80542dcf7b103
             u, s, v = NCM09.svd_qr(A)
             print("SVD decomposition A=U*S*V.T  U:\n", u.round(3))
             print("SVD decomposition A=U*S*V.T  S:\n", s.round(3))
