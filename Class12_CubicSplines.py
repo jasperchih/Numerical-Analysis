@@ -1,7 +1,7 @@
 #   # -*- coding: UTF-8 -*-
 #   trial on the : Satomi machine
-#   Created by Ush on 2018/5/18
-#   Project name :  class10_ODE 
+#   Created by Ush on 2018/06/03
+#   Project name :  class12_Spline curves 
 #   Please contact CHIH, HSIN-CHING/D0631008 when expect to refer this source code.
 #   NOTE : no liability on any loss nor damage by using this source code. it is your own risk.
 
